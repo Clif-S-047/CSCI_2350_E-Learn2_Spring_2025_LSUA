@@ -1,0 +1,58 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Program_3;
+
+/**
+ *
+ * @author icema
+ */
+//Problem 3.28: Write a program that prompts the user to enter the center x, y cordinate, width and height of two rectangles and determines wheterh the second
+//rectangle is inside the first or overlaps with the first
+
+public class MyNewClass {
+    public static void main(String args[])
+    {
+        Scanner input = new Scanner (System.in);
+        
+        // prompt the user to enter first rectangle's information
+        
+        double r1x = input.nextDouble();
+        double r1y = input.nextDouble();
+        double r1width = input.nextDouble();
+        double r1height = input.nextDouble();
+        
+        // prompt the user to enter second rectangle's information
+        
+        double r2x = input.nextDouble();
+        double r2y = input.nextDouble();
+        double r2width = input.nextDouble();
+        double r2height = input.nextDouble();
+        
+        // calculate the edges of the rectangles
+        
+        double r1Left = r1x - r1width/2;
+        double r1Right = r1x + r1width/2;
+        double r1Top = r1y + r1height/2;
+        double r1Bottom = r1y - r1height/2;
+        
+        double r2Left = r2x - r1width/2;
+        double r2Right = r2x + r1width/2;
+        double r2Top = r2y + r1height/2;
+        double r2Bottom = r2y - r1height/2;
+        
+        // check whether r2 is inside r1
+        
+        if(r2Left >= r1Left && r2Right <= r1Right){
+            if(r2Bottom >= r1Bottom && r2Top <= r2Top){
+                System.out.println(R2 is inside R1 rectangle");
+            }
+        }
+        // check wheter r2 overs r1
+        else if( !((r2Left > r1Right) || (r2Right < r1Right) || (r2Bottom > r1Top) || (r2Top < r1Bottom))){
+            System.out.println("R2 Overlaps R1");
+            
+        }
+    }
+}
